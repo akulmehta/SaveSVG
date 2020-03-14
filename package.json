@@ -1,0 +1,35 @@
+{
+  "name": "savesvg",
+  "version": "1.0.0",
+  "description": "A javascript module to save SVG files from an HTML page to the local computer.",
+  "keywords": [
+    ""
+  ],
+  "homepage": "",
+  "license": "",
+  "author": {
+    "name": "Akul Mehta",
+    "url": "https://akulmehta.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/akulmehta/SaveSVG"
+  },
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^7.1.1",
+    "npm-run-all": "^4.1.5",
+    "rollup": "^1.16.2",
+    "rollup-plugin-terser": "^5.0.0",
+    "serve": "^11.0.2"
+  },
+  "dependencies": {
+    "d3-fetch": "^1.1.2",
+    "d3-selection": "^1.4.1"
+  },
+  "scripts": {
+    "build": "rollup -c",
+    "watch": "rollup -c -w",
+    "dev": "npm-run-all --parallel start watch",
+    "start": "serve public"
+  }
+}

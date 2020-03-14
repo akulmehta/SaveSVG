@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+
+<head lang='en'>
+	<meta charset='utf-8'>
+	<meta name='viewport' content='width=device-width'>
+	<title>SaveSVG Example</title>
+
+	<link rel="stylesheet" href="css/styles.css">
+
+	<script src="https://d3js.org/d3.v5.min.js"></script>
+
+</head>
+
+<body>
+	<h1>SaveSVG example</h1>
+	<p>Example SVG below. </p>
+	<p>In this SVG, the black line (link) connecting the circle and the square uses a style from 'css/styles.css'.</p>
+	<p>The circle and the square are generated using &lt;use xlink:href=&quot;&quot;&gt;&lt;/use&gt; tags.
+		<br>The xlink:href attribute points to the file containing the definitions and the id of the symbol to be fetched
+		e.g. 'images/monos.svg#glcnac' </p>
+	<br>
+
+	<svg id="mySVG" width="360" height="200">
+		<g id="glycang" transform="translate(50,50)">
+			<path class="glyd3link" d="M130,0L130,100" stroke-width="2"></path>
+			<g transform="translate(130,100)">
+				<use xlink:href="images/monos.svg#glcnac" x="-17.5" y="-17.5" height="35" width="35" class="symbol"></use><text
+					transform="translate(8.75,35)" font-size="18" text-anchor="middle"
+					style="font-family: Arial, Sans;"></text><text font-size="18" style="font-family: Arial, Sans;" x="-21" y="3"
+					text-anchor="end"></text>
+			</g>
+			<g transform="translate(130,0)">
+				<use xlink:href="images/monos.svg#gal" x="-17.5" y="-17.5" height="35" width="35" class="symbol"></use>
+				<text transform="translate(16,52.5)" font-size="18" text-anchor="middle"
+					style="font-family: Arial, Sans;">β4</text><text font-size="18" style="font-family: Arial, Sans;" x="-21"
+					y="3" text-anchor="end"></text>
+			</g>
+		</g>
+	</svg>
+
+	<button onclick="SaveSVG.save('mySVG', 'css/styles.css', 'images/monos.svg')">Save SVG</button>
+	<script src='SaveSVG.js'></script>
+</body>
+
+</html>
